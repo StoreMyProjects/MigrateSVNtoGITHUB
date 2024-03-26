@@ -28,7 +28,7 @@ for b in $(git for-each-ref --format='%(refname:short)' refs/remotes); do git br
 ## Step 3: Push the Local Git Repository to GitHub
 ### 3.1. Add the GitHub repository as a remote.
 ```
-git remote add github https://<USERNAME>@github.com/<USERNAME>/<REPO_NAME>.git
+git remote add origin https://<USERNAME>@github.com/<USERNAME>/<REPO_NAME>.git
 ```
 ### 3.2. Migrate lfs objects if there are large files in size
 ```
@@ -39,7 +39,7 @@ git lfs migrate import --everything --include="*.ear,*.7z,*.aix"
 ```
 ### 3.3. Push the local Git repository to the GitHub repository.
 ```
-git push --all github
-git push --tags github
+git push --all origin
+git push --tags origin
 ```
 Now you have successfully migrated your SVN project repository with multiple branches, tags, and a trunk to a GitHub repository.
