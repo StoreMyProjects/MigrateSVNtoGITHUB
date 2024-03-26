@@ -19,7 +19,7 @@ cd your_project
 ## Step 2: Convert SVN Tags and Branches to Local Git Tags and Branches
 ### 2.1. Convert SVN tags to local Git tags.
 ```
-for t in $(git for-each-ref --format='%(refname:short)' refs/remotes/tags); do git tag ${t/tags\//} $t && git branch -D -r $t; done
+for t in $(git for-each-ref --format='%(refname:short)' refs/remotes/origin/tags); do git tag ${t/refs\/remotes\/origin\/tags\//} $t && git branch -D -r $t; done
 ```
 ### 2.2. Convert SVN branches to local Git branches.
 ```
