@@ -23,7 +23,7 @@ for t in $(git for-each-ref --format='%(refname:short)' refs/remotes/origin/tags
 ```
 ### 2.2. Convert SVN branches to local Git branches.
 ```
-for b in $(git for-each-ref --format='%(refname:short)' refs/remotes); do git branch $b refs/remotes/$b && git branch -D -r $b; done
+for b in $(git for-each-ref --format='%(refname:short)' refs/remotes); do git branch ${b/refs\/remotes\/origin\//} $b && git branch -D -r $b; done
 ```
 ## Step 3: Push the Local Git Repository to GitHub
 ### 3.1. Add the GitHub repository as a remote.
