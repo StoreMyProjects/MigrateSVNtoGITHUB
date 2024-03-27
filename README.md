@@ -34,8 +34,8 @@ git remote add origin https://<USERNAME>@github.com/<USERNAME>/<REPO_NAME>.git
 ```
 git lfs install
 git lfs migrate info --everything  --above="50 MB"
+git lfs migrate import --everything --include="*.ear,*.7z,*.aix" --verbose
 git lfs ls-files --long --size --all
-git lfs migrate import --everything --include="*.ear,*.7z,*.aix"
 ```
 ### 3.3. Push the local Git repository to the GitHub repository.
 ```
