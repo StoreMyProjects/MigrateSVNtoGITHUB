@@ -19,11 +19,11 @@ cd your_project
 ## Step 2: Convert SVN Tags and Branches to Local Git Tags and Branches
 ### 2.1. Convert SVN tags to local Git tags.
 ```
-for t in $(git for-each-ref --format='%(refname:short)' refs/remotes/origin/tags); do git tag ${t/refs\/remotes\/origin\/tags\//} $t && git branch -D -r $t; done
+for t in $(git for-each-ref --format='%(refname:short)' refs/remotes/origin/tags); do git tag $(basename $t) $t && git branch -D -r $t; done
 ```
 ### 2.2. Convert SVN branches to local Git branches.
 ```
-for b in $(git for-each-ref --format='%(refname:short)' refs/remotes); do git branch ${b/refs\/remotes\/origin\//} $b && git branch -D -r $b; done
+for b in $(git for-each-ref --format='%(refname:short)' refs/remotes); do git branch $(basename $b) $b && git branch -D -r $b; done
 ```
 ## Step 3: Push the Local Git Repository to GitHub
 ### 3.1. Add the GitHub repository as a remote.
